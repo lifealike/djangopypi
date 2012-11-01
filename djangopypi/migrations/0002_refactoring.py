@@ -108,7 +108,7 @@ class Migration(SchemaMigration):
         db.add_column('djangopypi_release', 'hidden', self.gf('django.db.models.fields.BooleanField')(default=False, blank=True), keep_default=False)
 
         # Adding field 'Release.created'
-        db.add_column('djangopypi_release', 'created', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, default='1970-01-01 00:00:00', blank=True), keep_default=False)
+        db.add_column('djangopypi_release', 'created', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, default='1970-01-01 00:00:00+00:00', blank=True), keep_default=False)
 
         # Adding unique constraint on 'Release', fields ['version', 'package']
         db.create_unique('djangopypi_release', ['version', 'package_id'])
