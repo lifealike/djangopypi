@@ -96,7 +96,7 @@ class Migration(SchemaMigration):
         db.delete_column('djangopypi_release', 'distribution')
 
         # Adding field 'Release.package'
-        db.add_column('djangopypi_release', 'package', self.gf('django.db.models.fields.related.ForeignKey')(default='', related_name='releases', to=orm['djangopypi.Package']), keep_default=False)
+        db.add_column('djangopypi_release', 'package', self.gf('django.db.models.fields.related.ForeignKey')(default=None, related_name='releases', to=orm['djangopypi.Package']), keep_default=False)
 
         # Adding field 'Release.metadata_version'
         db.add_column('djangopypi_release', 'metadata_version', self.gf('django.db.models.fields.CharField')(default='1.0', max_length=64), keep_default=False)
