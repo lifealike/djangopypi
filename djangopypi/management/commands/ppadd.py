@@ -107,10 +107,6 @@ added"""
         package.owners.add(owner)
         package.maintainers.add(owner)
 
-        for classifier in meta.classifiers:
-            package.classifiers.add(
-                    Classifier.objects.get_or_create(name=classifier)[0])
-
         release = Release()
         release.version = meta.version
         release.package = package
