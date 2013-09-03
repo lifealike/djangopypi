@@ -41,6 +41,7 @@ setup(
         'setuptools',
         'pkginfo',
         'docutils',
+        'pip==1.4.1',
     ],
     setup_requires=[
         'setuptools',
