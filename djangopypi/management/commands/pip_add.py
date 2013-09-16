@@ -14,7 +14,8 @@ from djangopypi.management.commands.ppadd import Command as BasicCommand
 @contextmanager
 def tempdir():
     """Simple context that provides a temporary directory that is deleted
-    when the context is exited."""
+    when the context is exited.
+    """
     d = tempfile.mkdtemp(".tmp", "djangopypi.")
     try:
         yield d
